@@ -11,11 +11,11 @@ namespace EmployeeWagess
         const int wagePerHour = 20;
         const int fullDayHour = 8;
         int dailyWage = 0;
-        public void Random()
+        public void EmpWage()
         {
-            Random num = new Random();
-            int numOne = num.Next(2);
-            if (numOne == 1)
+            Random checkAttendance  = new Random();
+            int check = checkAttendance.Next(2);
+            if (check == 1)
             {
                 dailyWage = wagePerHour * fullDayHour;
                 Console.WriteLine("Employee is present");

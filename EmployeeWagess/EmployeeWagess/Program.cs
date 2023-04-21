@@ -11,7 +11,7 @@ namespace EmployeeWagess
         public static void Main(string[] args)
         {
             EmployeWageProblem wageProblem = new EmployeWageProblem();
-            wageProblem.Random();
+            wageProblem.EmpWage();
         }
     }
 }
