@@ -15,23 +15,23 @@ namespace EmployeeWagess
         {
             Random checkAttendance = new Random();
             int check = checkAttendance.Next(3);
-            if (check == 0)
+            switch (check)
             {
-                empHour = 8;
-                Console.WriteLine("Employee is fully present");
-            }
-            else if (check == 1)
-            {
-                empHour = 4;
-                Console.WriteLine("Employee is partly present");
-            }
-            else
-            {
-                empHour = 0;
-                Console.WriteLine("Employee is absent");
+                case 0:
+                    empHour = 8;
+                    Console.WriteLine("Employee is fully present");
+                    break;
+                case 1:
+                    empHour = 4;
+                    Console.WriteLine("Employee is partly present");
+                    break;
+                case 2:
+                    empHour = 0;
+                    Console.WriteLine("Employee is absent");
+                    break;
             }
             dailyWage = wagePerHour * empHour;
-            Console.WriteLine("Daily Wage is : " + dailyWage);
+            Console.WriteLine("Daily wage is : " + dailyWage);
             Console.ReadKey();
         }
     }
