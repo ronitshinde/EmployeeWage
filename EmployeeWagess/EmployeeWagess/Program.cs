@@ -10,8 +10,8 @@ namespace EmployeeWagess
     {
         public static void Main(string[] args)
         {
-            EmployeWageProblem obj = new EmployeWageProblem();
-            obj.Random();
+            EmployeWageProblem wageProblem = new EmployeWageProblem();
+            wageProblem.Random();
         }
     }
 }
