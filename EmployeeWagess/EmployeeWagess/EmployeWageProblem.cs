@@ -9,36 +9,43 @@ namespace EmployeeWagess
     public class EmployeWageProblem
     {
         const int wagePerHour = 20;
-        const int workingDays = 20;
+        int workingDays = 1;
+        int totalHours = 0;
         int dailyWage = 0;
         int empHour = 0;
         int totalWageCount = 0;
+        int totalWorkingDays = 0;
         public void EmpWage()
         {
             Random checkAttendance = new Random();
-            for (int i = 0; i < workingDays; i++)
+            while (totalHours <= 100 && workingDays <= 20 )
             {
+                if (totalHours == 100)
+                    break;
                 int check = checkAttendance.Next(3);
                 switch (check)
                 {
                     case 0:
                         empHour = 8;
-                        Console.Write("Employee is fully present");
                         break;
                     case 1:
                         empHour = 4;
-                        Console.Write("Employee is partly present");
                         break;
                     case 2:
                         empHour = 0;
-                        Console.Write("Employee is absent");
                         break;
                 }
                 dailyWage = wagePerHour * empHour;
-                Console.WriteLine(" with daily wage : "+dailyWage);
+                Console.WriteLine("Employee hours for Day " + workingDays + " is : " + empHour + " with wage : " + dailyWage);
                 totalWageCount += dailyWage;
+                totalHours += empHour;
+                totalWorkingDays = workingDays;
+                workingDays++;
+                
             }
             Console.WriteLine("Total wage count is : " + totalWageCount);
+            Console.WriteLine("Total hours count is : " + totalHours);
+            Console.WriteLine("Total working days is : " + totalWorkingDays);
             Console.ReadKey();
         }
     }
