@@ -9,20 +9,29 @@ namespace EmployeeWagess
     public class EmployeWageProblem
     {
         const int wagePerHour = 20;
-        const int fullDayHour = 8;
         int dailyWage = 0;
+        int empHour = 0;
         public void EmpWage()
         {
-            Random checkAttendance  = new Random();
-            int check = checkAttendance.Next(2);
-            if (check == 1)
+            Random checkAttendance = new Random();
+            int check = checkAttendance.Next(3);
+            if (check == 0)
             {
-                dailyWage = wagePerHour * fullDayHour;
-                Console.WriteLine("Employee is present");
-                Console.WriteLine("Daily Wage is : " +dailyWage);
+                empHour = 8;
+                Console.WriteLine("Employee is fully present");
+            }
+            else if (check == 1)
+            {
+                empHour = 4;
+                Console.WriteLine("Employee is partly present");
             }
             else
+            {
+                empHour = 0;
                 Console.WriteLine("Employee is absent");
+            }
+            dailyWage = wagePerHour * empHour;
+            Console.WriteLine("Daily Wage is : " + dailyWage);
             Console.ReadKey();
         }
     }
