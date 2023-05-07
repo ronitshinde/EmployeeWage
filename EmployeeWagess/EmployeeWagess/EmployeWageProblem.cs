@@ -9,16 +9,17 @@ namespace EmployeeWagess
     public class EmployeWageProblem
     {
         const int wagePerHour = 20;
-        int workingDays = 1;
+        int workingDays;
         int totalHours = 0;
         int dailyWage = 0;
         int empHour = 0;
         int totalWageCount = 0;
         int totalWorkingDays = 0;
-        public void EmpWage()
+        public void EmpWage(int workingDays)
         {
+            this.workingDays = workingDays;
             Random checkAttendance = new Random();
-            while (totalHours <= 100 && workingDays <= 20 )
+            while (totalHours <= 100 && workingDays <= 20)
             {
                 if (totalHours == 100)
                     break;
@@ -41,7 +42,6 @@ namespace EmployeeWagess
                 totalHours += empHour;
                 totalWorkingDays = workingDays;
                 workingDays++;
-                
             }
             Console.WriteLine("Total wage count is : " + totalWageCount);
             Console.WriteLine("Total hours count is : " + totalHours);
